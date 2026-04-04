@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'PeakAI — Den åpne kildekode AI-agenten',
-  description: 'PeakAI er en åpen kildekode AI-agent designet for utviklere. 100% gratis, ingen datainnsamling.',
-  keywords: ['AI', 'coding', 'development', ' agents', 'open source', 'llm'],
+  title: 'PeakAI — Desktop AI Agent',
+  description: 'A cross-platform AI agent with a Rust-powered backend. Connect to any LLM provider and automate complex tasks locally.',
+  keywords: ['AI', 'agent', 'desktop', 'llm', 'ollama', 'openai', 'anthropic'],
 }
 
 export default function RootLayout({

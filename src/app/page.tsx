@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ArrowRight, Github, Menu, X } from 'lucide-react';
+import { ArrowRight, Menu, X } from 'lucide-react';
 
 export default function Home() {
   const [open, setOpen] = useState(false);
@@ -17,19 +17,12 @@ export default function Home() {
           </div>
           
           <nav className="hidden md:flex items-center gap-8 text-sm text-zinc-500">
-            <a href="#features" className="hover:text-zinc-950 transition-colors">features</a>
-            <a href="#code" className="hover:text-zinc-950 transition-colors">code</a>
-            <a href="#faq" className="hover:text-zinc-950 transition-colors">faq</a>
+            <a href="/" className="hover:text-zinc-950 transition-colors">hjem</a>
+            <a href="/install" className="hover:text-zinc-950 transition-colors">install</a>
+            <a href="/documentation" className="hover:text-zinc-950 transition-colors">documentation</a>
           </nav>
           
           <div className="flex items-center gap-4">
-            <a 
-              href="https://github.com" 
-              target="_blank"
-              className="hidden md:block text-zinc-400 hover:text-zinc-950 transition-colors"
-            >
-              <Github size={18} />
-            </a>
             <button 
               className="md:hidden text-zinc-950"
               onClick={() => setOpen(!open)}
@@ -44,9 +37,9 @@ export default function Home() {
       {open && (
         <div className="md:hidden fixed inset-0 z-40 bg-zinc-50 pt-20 px-6">
           <nav className="flex flex-col gap-6 text-2xl font-light">
-            <a href="#features" onClick={() => setOpen(false)}>features</a>
-            <a href="#code" onClick={() => setOpen(false)}>code</a>
-            <a href="#faq" onClick={() => setOpen(false)}>faq</a>
+            <a href="/" onClick={() => setOpen(false)}>hjem</a>
+            <a href="/install" onClick={() => setOpen(false)}>install</a>
+            <a href="/documentation" onClick={() => setOpen(false)}>documentation</a>
           </nav>
         </div>
       )}
@@ -55,25 +48,28 @@ export default function Home() {
       <section className="min-h-screen pt-32 px-6 flex flex-col justify-center">
         <div className="max-w-4xl mx-auto w-full">
           <div className="text-xs text-zinc-400 mb-8 tracking-widest uppercase">
-            open source ai agent
+            autonomous agent
           </div>
           
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-light leading-none tracking-tight mb-12">
-            <span className="block">your code.</span>
-            <span className="block">your models.</span>
-            <span className="block text-zinc-400">your machine.</span>
+            <span className="block">think</span>
+            <span className="block">execute</span>
+            <span className="block text-zinc-400">automated.</span>
           </h1>
           
           <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-start md:items-center">
             <a 
-              href="#features"
+              href="/install"
               className="inline-flex items-center gap-2 text-sm font-medium px-0 py-2 border-b border-zinc-950 hover:border-zinc-400 transition-colors"
             >
-              learn more <ArrowRight size={14} />
+              get started <ArrowRight size={14} />
             </a>
-            <code className="text-xs text-zinc-500 font-mono bg-zinc-100 px-3 py-1.5 rounded">
-              curl -fsSL https://peak.ai/install | sh
-            </code>
+            <a
+              href="/documentation"
+              className="text-sm text-zinc-500 hover:text-zinc-950 transition-colors"
+            >
+              read the docs
+            </a>
           </div>
         </div>
       </section>
@@ -83,20 +79,20 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-zinc-200">
             <div className="bg-zinc-50 p-8 md:p-12">
-              <div className="text-4xl md:text-5xl font-light mb-2">100%</div>
-              <div className="text-xs text-zinc-500 uppercase tracking-wider">free & open</div>
-            </div>
-            <div className="bg-zinc-50 p-8 md:p-12">
-              <div className="text-4xl md:text-5xl font-light mb-2">75+</div>
-              <div className="text-xs text-zinc-500 uppercase tracking-wider">models supported</div>
-            </div>
-            <div className="bg-zinc-50 p-8 md:p-12">
               <div className="text-4xl md:text-5xl font-light mb-2">local</div>
-              <div className="text-xs text-zinc-500 uppercase tracking-wider">runs on device</div>
+              <div className="text-xs text-zinc-500 uppercase tracking-wider">or cloud llms</div>
             </div>
             <div className="bg-zinc-50 p-8 md:p-12">
-              <div className="text-4xl md:text-5xl font-light mb-2">0</div>
-              <div className="text-xs text-zinc-500 uppercase tracking-wider">data collected</div>
+              <div className="text-4xl md:text-5xl font-light mb-2">any</div>
+              <div className="text-xs text-zinc-500 uppercase tracking-wider">llm provider</div>
+            </div>
+            <div className="bg-zinc-50 p-8 md:p-12">
+              <div className="text-4xl md:text-5xl font-light mb-2">privacy</div>
+              <div className="text-xs text-zinc-500 uppercase tracking-wider">your data stays local</div>
+            </div>
+            <div className="bg-zinc-50 p-8 md:p-12">
+              <div className="text-4xl md:text-5xl font-light mb-2">cross-platform</div>
+              <div className="text-xs text-zinc-500 uppercase tracking-wider">macos linux windows</div>
             </div>
           </div>
         </div>
@@ -112,9 +108,9 @@ export default function Home() {
           <div className="space-y-0">
             {[
               { title: 'Neural Processing', desc: 'Context-aware AI that understands your entire codebase.' },
-              { title: 'Any Model', desc: 'Connect to Ollama, OpenAI, Anthropic, or any LLM provider.' },
+              { title: 'Any Model', desc: 'Connect to OpenAI, Anthropic, Google, local Ollama, or any OpenAI-compatible API.' },
               { title: 'Terminal Native', desc: 'Works in your terminal, desktop, or as an IDE extension.' },
-              { title: 'Privacy First', desc: 'Your code never leaves your machine unless you want it to.' },
+              { title: 'Privacy First', desc: 'Only prompts are sent to cloud providers. Your code and files never leave your device.' },
               { title: 'Plugin System', desc: 'Extend functionality with a modular plugin architecture.' },
             ].map((item, i) => (
               <div 
@@ -161,7 +157,7 @@ export default function Home() {
             <span className="text-zinc-400">on your machine</span>
           </div>
           <p className="text-zinc-500 text-sm max-w-md mx-auto">
-            PeakAI processes everything locally. We don't collect data, track usage, or see your code. Ever.
+            We don't see your code. When using cloud models, only the prompt is sent—no files or data leave your device.
           </p>
         </div>
       </section>
@@ -175,10 +171,10 @@ export default function Home() {
           
           <div className="space-y-0">
             {[
-              { q: 'What is PeakAI?', a: 'An open source AI coding agent that runs entirely on your machine. No subscriptions, no data collection.' },
-              { q: 'How does it work?', a: 'Install it, connect your preferred LLM, and start chatting with your codebase.' },
-              { q: 'Is it really free?', a: 'Yes. 100% free and open source under the MIT license.' },
-              { q: 'Which models can I use?', a: 'Any model that supports the OpenAI-compatible API, including Ollama, GPT-4, Claude, and more.' },
+              { q: 'What is PeakAI?', a: 'A cross-platform AI agent with a Rust-powered backend. Works with any LLM—run locally with Ollama or connect to OpenAI, Anthropic, Google, and more.' },
+              { q: 'How does it work?', a: 'Install the app, configure your preferred LLM (local or cloud), and interact via a beautiful desktop UI or Telegram.' },
+              { q: 'Which models can I use?', a: 'All major providers supported: OpenAI, Anthropic, Google, local Ollama, and any OpenAI-compatible API. Works with the latest models.' },
+              { q: 'Is my data safe?', a: 'Your data stays on your machine. When using cloud models, only the prompt is sent to the provider—no code or files leave your device.' },
             ].map((item, i) => (
               <div key={i} className="py-6 border-t border-zinc-200">
                 <h3 className="font-medium mb-2">{item.q}</h3>
@@ -194,22 +190,21 @@ export default function Home() {
         <div className="max-w-6xl mx-auto text-center">
           <div className="text-5xl md:text-7xl font-light mb-8 leading-tight">
             ready to try?<br />
-            <span className="text-zinc-600">it's free</span>
+            <span className="text-zinc-600">download now</span>
           </div>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a 
-              href="#code"
+              href="/install"
               className="inline-flex items-center gap-2 px-6 py-3 bg-zinc-50 text-zinc-950 text-sm font-medium rounded hover:bg-zinc-200 transition-colors"
             >
               Install now <ArrowRight size={14} />
             </a>
             <a 
-              href="https://github.com"
-              target="_blank"
+              href="/documentation"
               className="inline-flex items-center gap-2 px-6 py-3 border border-zinc-800 text-sm font-medium rounded hover:border-zinc-600 transition-colors"
             >
-              View on GitHub
+              Read documentation
             </a>
           </div>
         </div>
@@ -224,9 +219,9 @@ export default function Home() {
           </div>
           
           <div className="flex items-center gap-6">
-            <a href="https://github.com" target="_blank" className="hover:text-zinc-950 transition-colors">github</a>
-            <a href="#" className="hover:text-zinc-950 transition-colors">docs</a>
-            <a href="#" className="hover:text-zinc-950 transition-colors">discord</a>
+            <a href="/" className="hover:text-zinc-950 transition-colors">hjem</a>
+            <a href="/install" className="hover:text-zinc-950 transition-colors">install</a>
+            <a href="/documentation" className="hover:text-zinc-950 transition-colors">documentation</a>
           </div>
           
           <div>© 2026</div>
