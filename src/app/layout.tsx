@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import Navbar from '@/components/Navbar'
 
 export const metadata: Metadata = {
   title: 'PeakAI — Desktop AI Agent',
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="no">
       <body className="bg-white text-zinc-900 antialiased">
+        <Navbar />
         {children}
       </body>
     </html>

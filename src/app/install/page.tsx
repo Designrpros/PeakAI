@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { ArrowRight, Download } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 
@@ -11,8 +11,6 @@ export const metadata: Metadata = {
 export default function InstallPage() {
   return (
     <div className="min-h-screen bg-zinc-50 text-zinc-950">
-      <Navbar />
-
       <main className="pt-32 px-6">
         <div className="max-w-3xl mx-auto">
           <div className="text-xs text-zinc-400 mb-4 tracking-widest uppercase">

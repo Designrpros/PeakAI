@@ -1,45 +1,21 @@
 'use client';
 
-import { useState } from 'react';
 import { ArrowRight, Menu, X } from 'lucide-react';
+import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Home() {
   const [open, setOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-zinc-50 text-zinc-950">
-      {/* Minimal Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-50/80 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-2xl font-light tracking-tight">peak</span>
-            <span className="text-2xl font-semibold">ai</span>
-          </div>
-          
-          <nav className="hidden md:flex items-center gap-8 text-sm text-zinc-500">
-            <a href="/" className="hover:text-zinc-950 transition-colors">hjem</a>
-            <a href="/install" className="hover:text-zinc-950 transition-colors">install</a>
-            <a href="/documentation" className="hover:text-zinc-950 transition-colors">documentation</a>
-          </nav>
-          
-          <div className="flex items-center gap-4">
-            <button 
-              className="md:hidden text-zinc-950"
-              onClick={() => setOpen(!open)}
-            >
-              {open ? <X size={20} /> : <Menu size={20} />}
-            </button>
-          </div>
-        </div>
-      </header>
-
       {/* Mobile Menu */}
       {open && (
         <div className="md:hidden fixed inset-0 z-40 bg-zinc-50 pt-20 px-6">
           <nav className="flex flex-col gap-6 text-2xl font-light">
-            <a href="/" onClick={() => setOpen(false)}>hjem</a>
-            <a href="/install" onClick={() => setOpen(false)}>install</a>
-            <a href="/documentation" onClick={() => setOpen(false)}>documentation</a>
+            <Link href="/" onClick={() => setOpen(false)}>hjem</Link>
+            <Link href="/install" onClick={() => setOpen(false)}>install</Link>
+            <Link href="/documentation" onClick={() => setOpen(false)}>documentation</Link>
           </nav>
         </div>
       )}
