@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import { ArrowRight, BookOpen } from 'lucide-react'
 import Link from 'next/link'
-import Navbar from '@/components/Navbar'
 
 export const metadata: Metadata = {
   title: 'Documentation — PeakAI',
@@ -11,8 +10,6 @@ export const metadata: Metadata = {
 export default function DocumentationPage() {
   return (
     <div className="min-h-screen bg-zinc-50 text-zinc-950">
-      <Navbar />
-
       <main className="pt-32 px-6">
         <div className="max-w-3xl mx-auto">
           <div className="text-xs text-zinc-400 mb-4 tracking-widest uppercase">
@@ -223,7 +220,7 @@ export default function DocumentationPage() {
               
               <div className="mt-6">
                 <Link 
-                  href="/install"
+                  href="/PeakAI/install"
                   className="inline-flex items-center gap-2 text-sm font-medium border-b border-zinc-950 hover:border-zinc-400 transition-colors"
                 >
                   Need help installing? <ArrowRight size={14} />
@@ -242,9 +239,9 @@ export default function DocumentationPage() {
           </div>
           
           <div className="flex items-center gap-6">
-            <Link href="/" className="hover:text-zinc-950 transition-colors">hjem</Link>
-            <Link href="/install" className="hover:text-zinc-950 transition-colors">install</Link>
-            <Link href="/documentation" className="hover:text-zinc-950 transition-colors">documentation</Link>
+            <Link href="/PeakAI/" className="hover:text-zinc-950 transition-colors">hjem</Link>
+            <Link href="/PeakAI/install" className="hover:text-zinc-950 transition-colors">install</Link>
+            <Link href="/PeakAI/documentation" className="hover:text-zinc-950 transition-colors">documentation</Link>
           </div>
           
           <div>© 2026</div>

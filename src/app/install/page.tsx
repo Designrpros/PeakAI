@@ -160,7 +160,7 @@ export default function InstallPage() {
               
               <div className="mt-6">
                 <Link 
-                  href="/documentation"
+                  href="/PeakAI/documentation"
                   className="inline-flex items-center gap-2 text-sm font-medium border-b border-zinc-950 hover:border-zinc-400 transition-colors"
                 >
                   View full documentation <ArrowRight size={14} />
@@ -179,9 +179,9 @@ export default function InstallPage() {
           </div>
           
           <div className="flex items-center gap-6">
-            <Link href="/" className="hover:text-zinc-950 transition-colors">hjem</Link>
-            <Link href="/install" className="hover:text-zinc-950 transition-colors">install</Link>
-            <Link href="/documentation" className="hover:text-zinc-950 transition-colors">documentation</Link>
+            <Link href="/PeakAI/" className="hover:text-zinc-950 transition-colors">hjem</Link>
+            <Link href="/PeakAI/install" className="hover:text-zinc-950 transition-colors">install</Link>
+            <Link href="/PeakAI/documentation" className="hover:text-zinc-950 transition-colors">documentation</Link>
           </div>
           
           <div>© 2026</div>
