@@ -1,25 +1,11 @@
 'use client';
 
-import { ArrowRight, Menu, X } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import { useState } from 'react';
 
 export default function Home() {
-  const [open, setOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-zinc-50 text-zinc-950">
-      {/* Mobile Menu */}
-      {open && (
-        <div className="md:hidden fixed inset-0 z-40 bg-zinc-50 pt-20 px-6">
-          <nav className="flex flex-col gap-6 text-2xl font-light">
-            <Link href="/PeakAI/" onClick={() => setOpen(false)}>hjem</Link>
-            <Link href="/PeakAI/install" onClick={() => setOpen(false)}>install</Link>
-            <Link href="/PeakAI/documentation" onClick={() => setOpen(false)}>documentation</Link>
-          </nav>
-        </div>
-      )}
-
       {/* Hero - Brutalist Minimal */}
       <section className="min-h-screen pt-32 px-6 flex flex-col justify-center">
         <div className="max-w-4xl mx-auto w-full">
@@ -35,13 +21,13 @@ export default function Home() {
           
           <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-start md:items-center">
             <a 
-              href="/PeakAI/install"
+              href="/install"
               className="inline-flex items-center gap-2 text-sm font-medium px-0 py-2 border-b border-zinc-950 hover:border-zinc-400 transition-colors"
             >
               get started <ArrowRight size={14} />
             </a>
             <a
-              href="/PeakAI/documentation"
+              href="/documentation"
               className="text-sm text-zinc-500 hover:text-zinc-950 transition-colors"
             >
               read the docs
@@ -171,13 +157,13 @@ export default function Home() {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a 
-              href="/PeakAI/install"
+              href="/install"
               className="inline-flex items-center gap-2 px-6 py-3 bg-zinc-50 text-zinc-950 text-sm font-medium rounded hover:bg-zinc-200 transition-colors"
             >
               Install now <ArrowRight size={14} />
             </a>
             <a 
-              href="/PeakAI/documentation"
+              href="/documentation"
               className="inline-flex items-center gap-2 px-6 py-3 border border-zinc-800 text-sm font-medium rounded hover:border-zinc-600 transition-colors"
             >
               Read documentation
@@ -195,9 +181,9 @@ export default function Home() {
           </div>
           
           <div className="flex items-center gap-6">
-            <a href="/PeakAI/" className="hover:text-zinc-950 transition-colors">hjem</a>
-            <a href="/PeakAI/install" className="hover:text-zinc-950 transition-colors">install</a>
-            <a href="/PeakAI/documentation" className="hover:text-zinc-950 transition-colors">documentation</a>
+            <a href="/" className="hover:text-zinc-950 transition-colors">hjem</a>
+            <a href="/install" className="hover:text-zinc-950 transition-colors">install</a>
+            <a href="/documentation" className="hover:text-zinc-950 transition-colors">documentation</a>
           </div>
           
           <div>© 2026</div>
