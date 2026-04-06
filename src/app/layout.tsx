@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Navbar from '@/components/Navbar'
+import { ThemeProvider } from '@/components/ThemeProvider'
 
 export const metadata: Metadata = {
   title: 'PeakAI — Desktop AI Agent',
@@ -14,10 +15,33 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="no">
-      <body className="bg-white text-zinc-900 antialiased">
-        <Navbar />
-        {children}
+    <html lang="no" suppressHydrationWarning>
+      <head>
+        {/* Blocking script prevents dark flash — runs before render */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var t = localStorage.getItem('peakai-theme');
+                  if (t === 'light') {
+                    document.documentElement.classList.add('light');
+                  } else {
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch(e) {
+                  document.documentElement.classList.add('dark');
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className="antialiased">
+        <ThemeProvider>
+          <Navbar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
