@@ -1,2 +1,2 @@
-:HL["/PeakAI/_next/static/chunks/0_caq2c77mwoi.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"install","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"D_3gxHFJ-eKCMqW7dRFi-"}
+:HL["/PeakAI/_next/static/chunks/0m_m3o.v~ud6v.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"install","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"El11LuVyYAz95VB3_2wUw"}
